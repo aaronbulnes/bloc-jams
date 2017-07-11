@@ -116,6 +116,9 @@ var getSongItem = function(element) {
  };
 
 };
+
+ var setCurrentAlbum = function(album) {
+
   	 albumTitle.firstChild.nodeValue = album.title;
      albumArtist.firstChild.nodeValue = album.artist;
      albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
