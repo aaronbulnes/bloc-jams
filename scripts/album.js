@@ -46,10 +46,10 @@
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
-       '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
-       '  <td class="song-item-title">' + songName + '</td>'
-       '  <td class="song-item-duration">' + songLength + '</td>'
-       '</tr>'
+       +'  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
+       +'  <td class="song-item-title">' + songName + '</td>'
+       +'  <td class="song-item-duration">' + songLength + '</td>'
+       +'</tr>'
       ;
 
      return template;
@@ -94,6 +94,7 @@ if (currentlyPlayingSong === null) {
          songItem.innerHTML = pauseButtonTemplate;
          currentlyPlayingSong = songItem.getAttribute('data-song-number');
      }
+};
 
 var getSongItem = function(element) {
      
@@ -115,8 +116,6 @@ var getSongItem = function(element) {
      
  };
 
-};
-
  var setCurrentAlbum = function(album) {
 
   	 albumTitle.firstChild.nodeValue = album.title;
@@ -126,13 +125,11 @@ var getSongItem = function(element) {
 
      albumSongList.innerHTML = '';
 
- }
-
      for (i = 0; i < album.songs.length; i++) {
 
      	albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
      }
- 
+ }
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
 
@@ -173,7 +170,7 @@ var currentlyPlayingSong = null;
 
          });
 
-         songsRows[i].addEventListener('click', function(event) {
+         songRows[i].addEventListener('click', function(event) {
 
             clickHandler(event.target);
 
