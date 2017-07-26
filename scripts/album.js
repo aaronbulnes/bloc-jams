@@ -116,7 +116,7 @@ var setCurrentAlbum = function(album) {
     $albumSongList.empty();
 
     for (i = 0; i < album.songs.length; i++) {
-        var $newRow= createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
+        var $newRow= createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
         $albumSongList.append($newRow);
     }
 };
